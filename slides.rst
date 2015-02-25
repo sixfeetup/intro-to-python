@@ -35,6 +35,76 @@ Goals
 
 ----
 
+Intro to Shell
+==============
+
+At a high level, computers do four things:
+
+- run programs
+- store data
+- communicate with each other
+- interact with us
+
+.. note::
+    most of us use windows, icons, mice, and pointers
+    These technologies didn't become widespread until the 1980s
+    Going back past the 1950s, the only way to interact with early computers was to rewire them.
+    But in between, from the 1950s to the 1980s, most people used line printers.
+    These devices only allowed input and output of the letters, numbers, and punctuation found on a standard keyboard,
+    so programming languages and interfaces had to be designed around that constraint.
+
+----
+
+Command-line interface
+======================
+
+CLI vs GUI
+
+.. note::
+    The heart of a CLI is a **read-evaluate-print loop**, or REPL:
+    when the user types a command and then presses the enter (or return) key,
+    the computer reads it, executes it, and prints its output.
+
+----
+
+REPL
+====
+
+* Read
+* Execute
+* Print
+* Loop
+
+.. note::
+    This description makes it sound as though the user sends commands directly to the computer,
+    and the computer sends output directly to the user.
+    In fact, there is usually a program in between called a **command shell**.
+
+----
+
+Popular Shells
+==============
+
+* bash
+* zsh
+* csh
+
+.. note::
+    Windows has a shell as well `cmd.exe`
+
+----
+
+Windows Shell Alternatives
+==========================
+
+* Window's PowerShell
+* Cygwin
+
+.. note::
+    We will not cover these!
+
+
+----
 Quick Overview of computer languages
 ====================================
 
@@ -54,20 +124,6 @@ Version Control
 
 ----
 
-Intro to Shell
-==============
-
-Shell Alternatives
-==================
-
-* Window's PowerShell
-* Cygwin
-
-.. note::
-    We will not cover these!
-
-
-----
 
 Python Install
 ==============
@@ -84,6 +140,7 @@ Editor setup
 
 Text Editors
 ++++++++++++
+
 * Vim
 * Emacs
 * Sublime Text
@@ -110,7 +167,7 @@ Zen of Python
 
 Let's get this started with the right mindset
 
-.. code::python
+.. code:: python
     >>> import this
 
 .. note::
@@ -269,7 +326,6 @@ Strings
 ----
 
 
-----
 * Data Structures
 * Conditional Expressions
 * Conditional Loops
@@ -282,11 +338,17 @@ Strings
 * Modules and packages
 * Building Command Line Programs
 * Working with Files
+  * read in a CSV file
 * Working with the web
+  * show urllib2
+  * install requests and show the good life
 * Testing your code
 * Error handling
 * Logging
 * Defensive Programming and Common Gotchas
+* Tools
+  * Basic Shell Commands
+  * Reading a Diff
 
 
 ----
@@ -294,5 +356,6 @@ Strings
 Credits
 =======
 
+Shell -- http://swcarpentry.github.io/shell-novice/
 Variables -- http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
 Datatypes -- http://www.diveintopython3.net/
