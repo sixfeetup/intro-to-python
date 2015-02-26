@@ -1,5 +1,18 @@
 .. -*- coding: utf-8 -*-
 
+:title: Intro to Programming
+:event: ElevenFifty
+:author: Calvin Hendryx-Parker
+:pygments: tango
+:css: custom.css
+
+.. |space| unicode:: 0xA0 .. non-breaking space
+.. |br| raw:: html
+    
+    <br />
+
+----
+
 Intro to Programming using Python
 =================================
 
@@ -12,10 +25,9 @@ Calvin Hendryx-Parker, CTO
 ++++++++++++++++++++++++++
 
 Six Feet Up, Inc.
-+++++++++++++++++
+-----------------
 
 Eleven Fifty Instructor
-+++++++++++++++++++++++
 
 .. note::
     Introduce yourself, why are you the person they should be listening to for
@@ -59,6 +71,7 @@ Command-line interface
 ======================
 
 CLI vs GUI
+++++++++++
 
 .. note::
     The heart of a CLI is a **read-evaluate-print loop**, or REPL:
@@ -70,10 +83,10 @@ CLI vs GUI
 REPL
 ====
 
-* Read
-* Execute
-* Print
-* Loop
+* **R** ead
+* **E** xecute
+* **P** rint
+* **L** oop
 
 .. note::
     This description makes it sound as though the user sends commands directly to the computer,
@@ -103,10 +116,217 @@ Windows Shell Alternatives
 .. note::
     We will not cover these!
 
+----
+
+Let's get started
+=================
+
+.. code:: sh
+
+    $ # I'm a prompt
+
+
+.. note::
+   The dollar sign is a prompt, which shows us that the shell is waiting for input; your shell may show something more elaborate.
 
 ----
-Quick Overview of computer languages
-====================================
+
+Run some commands
+=================
+
+.. code:: sh
+
+    $ whoami
+    calvin
+
+.. code:: sh
+
+    $ pwd
+    /home/calvin
+
+.. note::
+    finds a program called whoami,
+    runs that program,
+    displays that program's output, then
+    displays a new prompt to tell us that it's ready for more commands.
+    whoami and why not whereami?
+    in the early 1970s, when Unix was first being developed, every keystroke counted: the devices of the day were slow, and backspacing on a teletype was so painful that cutting the number of keystrokes in order to cut the number of typing mistakes was actually a win for usability
+
+----
+
+The Filesystem
+==============
+
+.. image:: figures/filesystem.svg
+
+.. note::
+    To understand what a "home directory" is, let's have a look at how the file system as a whole is organized. At the top is the root directory that holds everything else. We refer to it using a slash character / on its own; this is the leading slash in /users/nelle.
+
+----
+
+Home Directories
+================
+
+.. image:: figures/home-directories.svg
+
+.. note::
+    Underneath /users, we find one directory for each user with an account on this machine
+
+    two meanings for the / character. in front of name it is the directory root, inside a name, it is a seperator.
+
+----
+
+Listing Files
+=============
+
+.. code:: sh
+
+    $ ls
+    creatures  molecules           pizza.cfg
+    data       north-pacific-gyre  solar.pdf
+    Desktop    notes.txt           writing
+
+----
+
+Listing Files
+=============
+
+.. code:: sh
+
+    $ ls -F
+    creatures/  molecules/           pizza.cfg
+    data/       north-pacific-gyre/  solar.pdf
+    Desktop/    notes.txt            writing/
+
+.. code:: sh
+
+    $ ls -F data
+    amino-acids.txt   elements/     morse.txt
+    pdb/              planets.txt   sunspot.txt
+
+.. note::
+    we use an flag `-F` to change the output
+    we use an argument to get different information
+    data doesn't have a slash, it is relative to where you are
+
+----
+
+Listing Files
+=============
+
+.. code:: sh
+
+    $ ls -F /data
+    access.log    backup/    hardware.cfg
+    network.cfg
+
+.. note::
+    Now we are using an absolute path
+
+----
+
+Changing Directories
+====================
+
+.. code:: sh
+
+    $ cd data
+    $ pwd
+    /home/calvin/data
+
+.. note::
+    nothing fancy here, we change into the directory
+    try running `pwd`
+
+.. code:: sh
+
+    $ cd ..
+    $ pwd
+    /home/calvin
+
+.. note::
+    ".." is a special directory meaning the one containing this one or its parent
+    this special directory doesn't show up unless we use the `-a` flag
+    the current directory is "."
+
+    . and .. don't belong to the command ls, every program can use them.
+
+    stop and explain about what using `cd` with no args will do and what the special `~` shortcut are
+
+----
+
+Creating Files and Directories
+==============================
+
+.. code:: sh
+
+    $ mkdir thesis
+
+.. note::
+    use ls to verify that your directory has been created
+
+.. code:: sh
+
+    $ cd thesis
+    $ touch draft.txt
+
+
+----
+
+Removing Files and Directories
+==============================
+
+.. code:: sh
+
+    $ rm draft.txt
+
+.. note::
+    there is no "trash" here, deleting is forever
+
+.. code:: sh
+
+    $ cd ..
+    $ rmdir thesis
+    rmdir: failed to remove `thesis': Directory not empty
+
+.. code:: sh
+
+    $ rm thesis/draft.txt
+    $ rmdir thesis
+
+.. code:: sh
+
+    $ rm -r thesis
+
+----
+
+Moving Files and Directories
+============================
+
+.. code:: sh
+
+    $ mv thesis/draft.txt .
+
+.. note::
+    Can do the same as a copy as well using `cp`
+
+----
+
+Wildcards
+=========
+
+\* is a **wildcard**
+++++++++++++++++++++
+
+\? is also a **wildcard**
++++++++++++++++++++++++++
+
+.. note::
+    \* matches zero or more charaters
+    \? matches one charater
+
+    we can talk more shell later, but lets get to some programming
+    pipes and redirecting output are extremely useful as a developer
 
 ----
 
@@ -124,14 +344,41 @@ Version Control
 
 ----
 
+Why Version Control
+===================
+
+.. image:: figures/phd101212s.gif
+
+----
+
+Quick Git Primer
+================
+
+.. image:: figures/git-staging-area.svg
+
+----
+
+Quick Git Primer
+================
+
+.. image:: figures/git-committing.svg
+
+----
 
 Python Install
 ==============
 
 * Mac
+
   * Home Brew
+
   * OS X Dev Tools
+
 * Ubuntu Linux
+
+* Python Installers @ python.org_
+
+.. _python.org: http://www.python.org
 
 ----
 
@@ -162,12 +409,18 @@ IDE
 
 ----
 
+Quick Overview of computer languages
+====================================
+
+----
+
 Zen of Python
 =============
 
 Let's get this started with the right mindset
 
 .. code:: python
+
     >>> import this
 
 .. note::
@@ -185,17 +438,14 @@ In many other languages, assigning to a variable puts a value into a box.
 
    * - ::
 
-           int a = 1;
+        int a = 1;
 
-     - .. image:: a1box.png
+     - .. image:: figures/a1box.png
           :class: incremental
 
-.. container:: handout
+Box "a" now contains an integer 1.
 
-   Box "a" now contains an integer 1.
-
-   Assigning another value to the same variable replaces the contents
-   of the box:
+Assigning another value to the same variable replaces the contents of the box:
 
 .. list-table::
    :class: incremental borderless
@@ -204,13 +454,12 @@ In many other languages, assigning to a variable puts a value into a box.
 
            a = 2;
 
-     - .. image:: a2box.png
+     - .. image:: figures/a2box.png
           :class: incremental
 
-   Now box "a" contains an integer 2.
+Now box "a" contains an integer 2.
 
-   Assigning one variable to another makes a copy of the value and
-   puts it in the new box:
+Assigning one variable to another makes a copy of the value and puts it in the new box:
 
 .. list-table::
    :class: incremental borderless
@@ -219,14 +468,13 @@ In many other languages, assigning to a variable puts a value into a box.
 
            int b = a;
 
-     - .. image:: b2box.png
+     - .. image:: figures/b2box.png
           :class: incremental
 
-     - .. image:: a2box.png
+     - .. image:: figures/a2box.png
           :class: incremental
 
-   "b" is a second box, with a copy of integer 2.  Box "a" has a
-   separate copy.
+"b" is a second box, with a copy of integer 2.  Box "a" has a separate copy.
 
 ----
 
@@ -243,12 +491,12 @@ Python has "names"
 
            a = 1
 
-     - .. image:: a1tag.png
+     - .. image:: figures/a1tag.png
           :class: incremental
 
-   Here, an integer 1 object has a tag labelled "a".
+Here, an integer 1 object has a tag labelled "a".
 
-   If we reassign to "a", we just move the tag to another object:
+If we reassign to "a", we just move the tag to another object:
 
 .. list-table::
    :class: incremental borderless
@@ -257,20 +505,20 @@ Python has "names"
 
            a = 2
 
-     - .. image:: a2tag.png
+     - .. image:: figures/a2tag.png
           :class: incremental
 
-     - .. image:: 1.png
+     - .. image:: figures/1.png
           :class: incremental
 
-   Now the name "a" is attached to an integer 2 object.
+Now the name "a" is attached to an integer 2 object.
 
-   The original integer 1 object no longer has a tag "a".  It may live
-   on, but we can't get to it through the name "a".  (When an object
-   has no more references or tags, it is removed from memory.)
+The original integer 1 object no longer has a tag "a".  It may live
+on, but we can't get to it through the name "a".  (When an object
+has no more references or tags, it is removed from memory.)
 
-   If we assign one name to another, we're just attaching another
-   nametag to an existing object:
+If we assign one name to another, we're just attaching another
+nametag to an existing object:
 
 .. list-table::
    :class: incremental borderless
@@ -279,18 +527,18 @@ Python has "names"
 
            b = a
 
-     - .. image:: ab2tag.png
+     - .. image:: figures/ab2tag.png
           :class: incremental
 
-   The name "b" is just a second tag bound to the same object as "a".
+The name "b" is just a second tag bound to the same object as "a".
 
-   Although we commonly refer to "variables" even in Python (because
-   it's common terminology), we really mean "names" or "identifiers".
-   In Python, "variables" are nametags for values, not labelled boxes.
+Although we commonly refer to "variables" even in Python (because
+it's common terminology), we really mean "names" or "identifiers".
+In Python, "variables" are nametags for values, not labelled boxes.
 
-   If you get nothing else out of this tutorial, I hope you understand
-   how Python names work.  A good understanding is certain to pay
-   dividends, helping you to avoid cases like this:
+If you get nothing else out of this tutorial, I hope you understand
+how Python names work.  A good understanding is certain to pay
+dividends, helping you to avoid cases like this:
 
 .. note::
     We will go over why this is more important later when we get into examples of functions.
@@ -338,17 +586,17 @@ Strings
 * Modules and packages
 * Building Command Line Programs
 * Working with Files
-  * read in a CSV file
+  - read in a CSV file
 * Working with the web
-  * show urllib2
-  * install requests and show the good life
+  - show urllib2
+  - install requests and show the good life
 * Testing your code
 * Error handling
 * Logging
 * Defensive Programming and Common Gotchas
 * Tools
-  * Basic Shell Commands
-  * Reading a Diff
+  - Basic Shell Commands
+  - Reading a Diff
 
 
 ----
@@ -356,6 +604,6 @@ Strings
 Credits
 =======
 
-Shell -- http://swcarpentry.github.io/shell-novice/
-Variables -- http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
-Datatypes -- http://www.diveintopython3.net/
+* Shell -- http://swcarpentry.github.io/shell-novice
+* Variables -- http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
+* Datatypes -- http://www.diveintopython3.net
