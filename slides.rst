@@ -63,6 +63,64 @@ Goals
 
 ----
 
+Quick Chat
+==========
+
+IRC
++++
+
+http://webchat.freenode.net?channels=#ElevenFifty
+
+irc://chat.freenode.net/ElevenFifty
+
+.. note::
+    Internet Relay Chat can be used to overthrow govermnents
+    but more importantly, it is a space where many projects developers gather and answer questions
+
+----
+
+Let's get setup for the course
+==============================
+
+* Install Python
+* Install PyCharm
+
+Optionally:
+
+* Install VirutalBox
+* Import our Virtual Appliance
+
+----
+
+Python Install
+==============
+
+* Mac
+
+  * Home Brew
+  * OS X Dev Tools
+
+* Ubuntu Linux
+* Python Installers @ python.org_
+
+.. _python.org: http://www.python.org
+
+----
+
+PyCharm Install
+===============
+
+* Requires Java
+
+.. code:: shell
+
+    $ $EXTRACTION_PATH/pycharm-edu-1.0.1/bin/pycharm.sh  
+
+.. note::
+   ubuntu ppa for java http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html
+
+----
+
 What are Computer Programs
 ==========================
 
@@ -206,6 +264,41 @@ Comparison Practice
 
 .. note::
     Try these out and see what the interpreter returns to you
+
+----
+
+Editors
+=======
+
+Text Editors
+++++++++++++
+
+* Vim
+* Emacs
+* Sublime Text
+* Textmate
+* Notepad++
+
+IDE
++++
+
+* PyCharm
+* Wing IDE
+* Komodo
+* XCode
+* Eclipse
+
+.. note::
+    explain IDE
+    git init and then add all the course files
+
+----
+
+PyCharm
+=======
+
+Hello World
++++++++++++
 
 ----
 
@@ -524,48 +617,6 @@ Quick Git Primer
 ================
 
 .. image:: figures/git-committing.svg
-
-----
-
-Python Install
-==============
-
-* Mac
-
-  * Home Brew
-  * OS X Dev Tools
-
-* Ubuntu Linux
-* Python Installers @ python.org_
-
-.. _python.org: http://www.python.org
-
-----
-
-Editor setup
-============
-
-Text Editors
-++++++++++++
-
-* Vim
-* Emacs
-* Sublime Text
-* Textmate
-* Notepad++
-
-IDE
-+++
-
-* PyCharm
-* Wing IDE
-* Komodo
-* XCode
-* Eclipse
-
-.. note::
-    explain IDE
-    git init and then add all the course files
 
 ----
 
