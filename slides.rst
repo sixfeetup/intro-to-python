@@ -18,7 +18,7 @@ Intro to Programming using Python
 
 ----
 
-Your instructor
+Your Instructor
 ===============
 
 Calvin Hendryx-Parker, CTO
@@ -32,8 +32,21 @@ Eleven Fifty Instructor
 .. note::
     Introduce yourself, why are you the person they should be listening to for
     the next 5 days.
+    Started programming in 1998 (PHP, Visual Basic and ASP)
     Started using Python in 1999 (with Zope)
 
+----
+
+Quick Survey
+============
+
+.. note::
+    Why did you sign up for this course?
+    Who has written a program before?
+    Who knows what the console or terminal is on your computer?
+    Would you rate yourself an expert at Excel?
+    Who has done an intro programming course before?
+   
 ----
 
 Goals
@@ -44,6 +57,155 @@ Goals
 
 .. note::
     End project will be to build tools to manipulate CSV data you might use in Excel
+    Python is the most popular teching language at the university level right now
+
+    Python creator Guido von Rossum believes Python caught on in the labs because “scientists often need to improvise when trying to interpret results, so they are drawn to dynamic languages which allow them to work very quickly and see results almost immediately.”
+
+----
+
+What are Computer Programs
+==========================
+
+* Collection of instructions
+
+  * Interact with the user
+  * Interact with the computer hardware 
+  * Process data
+
+.. note::
+    We all know what a computer is?  it is a machine that stores pieves of information
+    It also moves, arranges and controls that information (or data)
+
+----
+
+Computers are not very smart
+============================
+
+.. image:: figures/Spinning_Star.svg
+
+.. note::
+    They can only do what you tell them to do
+
+----
+
+They follow sets of Instructions
+================================
+
+::
+
+    Strawberry Kiwi Tart
+
+    Ingredients:
+
+    Crust:
+    1 box Pillsbury™ refrigerated pie crusts, softened as directed on box
+    
+    Filling:
+    2/3 cup Yoplait® 99% Fat Free creamy vanilla yogurt (from 2-lb container)
+    1 container (8 oz) reduced-fat sour cream
+    1 box (4-serving size) vanilla instant pudding and pie filling mix
+    2 tablespoons orange marmalade
+    
+    Topping:
+    1 cup halved fresh strawberries
+    2 kiwifruit, peeled, thinly sliced
+    2 tablespoons orange marmalade
+    
+    Directions:
+    
+    Step 1: Heat oven to 450°F. Make pie crust as directed on box for One-Crust Baked Shell, using 9-inch tart pan with removable bottom or 9-inch glass pie plate. Bake 9 to 11 minutes or until light golden brown. Cool completely, about 30 minutes.
+    
+    Step 2: In medium bowl, mix filling ingredients with wire whisk until well blended. Pour into cooled baked shell. Arrange strawberries and kiwifruit on filling.
+    
+    Step 3: In small microwavable bowl, microwave marmalade uncovered on High 5 to 10 seconds or until melted. Brush over fruit. Refrigerate about 1 hour or until set before serving. Cover and refrigerate any remaining tart.
+
+Source: http://www.foodista.com/blog/2015/02/27/beautiful-strawberry-kiwi-tart
+
+----
+
+Algorithms
+==========
+
+.. note::
+    Fancy name for instructions we give to computers
+    Like a recipes with specific steps to follow
+    Usually with a lot more steps and written in a programming language like Python
+    Imagine telling someone to make a PB&J and they have no idea what a knife is or how to open the peanut butter
+
+----
+
+Quick Calculator
+================
+
+.. code:: python
+
+    >>> 2 + 2
+    >>> 12 -3
+    >>> 9 + 5 - 15
+    
+
+.. note::
+    Open PyCharm and get into the python shell to try it out as a calculator
+    In the programming world, we call the + and - operators
+
+----
+
+More Math
+=========
+
+.. code:: python
+
+    >>> 6 * 5
+    >>> 6 / 2
+    >>> 10 * 5 * 3
+    >>> 10 / 3
+
+.. note::
+    careful with integers and decimals
+    Python 3 knows what you "mean", but python 2 would not give you the same answer
+    integers vs floats (decimals)
+    Ruby for example will tell you 10/3 is 3
+    Python 2 is also the same
+    If you want decimals, you have to talk in decimals in those languages
+
+----
+
+Comparison Operators
+====================
+
+.. list-table::
+
+   * - ``==``
+     - Equal to
+   * - ``!=``
+     - Not equal to
+   * - ``<``
+     - Less than
+   * - ``>``
+     - Greater than
+   * - ``<=``
+     - Less than or equal to
+   * - ``>=``
+     - Greater than or equal to
+
+.. note::
+    we will go over a coule examples and discover another datatype of Python
+
+----
+
+Comparison Practice
+===================
+
+.. code:: python
+
+    >>> 5 < 4 + 3
+    >>> 12 + 1 >= 12
+    >>> 16 * 2 == 32
+    >>> 16 != 16
+    >>> 5 >= 6
+
+.. note::
+    Try these out and see what the interpreter returns to you
 
 ----
 
@@ -287,7 +449,7 @@ Removing Files and Directories
 
     $ cd ..
     $ rmdir thesis
-    rmdir: failed to remove `thesis': Directory not empty
+    rmdir: failed to remove `thesis`: Directory not empty
 
 .. code:: sh
 
@@ -371,11 +533,9 @@ Python Install
 * Mac
 
   * Home Brew
-
   * OS X Dev Tools
 
 * Ubuntu Linux
-
 * Python Installers @ python.org_
 
 .. _python.org: http://www.python.org
@@ -443,8 +603,6 @@ In many other languages, assigning to a variable puts a value into a box.
      - .. image:: figures/a1box.png
           :class: incremental
 
-Box "a" now contains an integer 1.
-
 Assigning another value to the same variable replaces the contents of the box:
 
 .. list-table::
@@ -457,7 +615,6 @@ Assigning another value to the same variable replaces the contents of the box:
      - .. image:: figures/a2box.png
           :class: incremental
 
-Now box "a" contains an integer 2.
 
 Assigning one variable to another makes a copy of the value and puts it in the new box:
 
@@ -474,15 +631,21 @@ Assigning one variable to another makes a copy of the value and puts it in the n
      - .. image:: figures/a2box.png
           :class: incremental
 
-"b" is a second box, with a copy of integer 2.  Box "a" has a separate copy.
+
+.. note::
+
+    Box "a" now contains an integer 1.
+
+    Now box "a" contains an integer 2.
+
+    "b" is a second box, with a copy of integer 2.  Box "a" has a separate copy.
 
 ----
 
 Python has "names"
 ==================
 
-   In Python, a "name" or "identifier" is like a parcel tag (or
-   nametag) attached to an object.
+In Python, a "name" or "identifier" is like a parcel tag (or nametag) attached to an object.
 
 .. list-table::
    :class: incremental borderless
@@ -494,7 +657,6 @@ Python has "names"
      - .. image:: figures/a1tag.png
           :class: incremental
 
-Here, an integer 1 object has a tag labelled "a".
 
 If we reassign to "a", we just move the tag to another object:
 
@@ -511,12 +673,6 @@ If we reassign to "a", we just move the tag to another object:
      - .. image:: figures/1.png
           :class: incremental
 
-Now the name "a" is attached to an integer 2 object.
-
-The original integer 1 object no longer has a tag "a".  It may live
-on, but we can't get to it through the name "a".  (When an object
-has no more references or tags, it is removed from memory.)
-
 If we assign one name to another, we're just attaching another
 nametag to an existing object:
 
@@ -530,17 +686,26 @@ nametag to an existing object:
      - .. image:: figures/ab2tag.png
           :class: incremental
 
-The name "b" is just a second tag bound to the same object as "a".
-
-Although we commonly refer to "variables" even in Python (because
-it's common terminology), we really mean "names" or "identifiers".
-In Python, "variables" are nametags for values, not labelled boxes.
-
-If you get nothing else out of this tutorial, I hope you understand
-how Python names work.  A good understanding is certain to pay
-dividends, helping you to avoid cases like this:
-
 .. note::
+
+    Here, an integer 1 object has a tag labelled "a".
+
+    Now the name "a" is attached to an integer 2 object.
+    
+    The original integer 1 object no longer has a tag "a".  It may live
+    on, but we can't get to it through the name "a".  (When an object
+    has no more references or tags, it is removed from memory.)
+
+    The name "b" is just a second tag bound to the same object as "a".
+    
+    Although we commonly refer to "variables" even in Python (because
+    it's common terminology), we really mean "names" or "identifiers".
+    In Python, "variables" are nametags for values, not labelled boxes.
+    
+    If you get nothing else out of this tutorial, I hope you understand
+    how Python names work.  A good understanding is certain to pay
+    dividends, helping you to avoid cases like this:
+
     We will go over why this is more important later when we get into examples of functions.
     Not understanding how a language handles variables (and scope) can lead to confusing results.
     You "assign" a name to a value and that process is called "assignment"
@@ -570,6 +735,12 @@ Python has many native datatypes. Here are the important ones:
 
 Strings
 =======
+
+Warning: Gory Details Ahead
++++++++++++++++++++++++++++
+
+.. note::
+   gory details ahead
 
 ----
 
@@ -607,3 +778,4 @@ Credits
 * Shell -- http://swcarpentry.github.io/shell-novice
 * Variables -- http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
 * Datatypes -- http://www.diveintopython3.net
+* Strings -- http://www.diveintopython3.net/strings.html
