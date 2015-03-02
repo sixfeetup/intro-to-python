@@ -86,6 +86,7 @@ Let's get setup for the course
 * Install PyCharm
 
 Optionally:
++++++++++++
 
 * Install VirutalBox
 * Import our Virtual Appliance
@@ -95,21 +96,39 @@ Optionally:
 Python Install
 ==============
 
-* Mac
+* Mac OS X includes Python 2
 
-  * Home Brew
-  * OS X Dev Tools
+  * Install Python three from `Home Brew`_
+  * OS XCode Command Line tools
 
-* Ubuntu Linux
+* Ubuntu Linux includes Python
 * Python Installers @ python.org_
 
+.. _Home Brew: http://brew.sh
 .. _python.org: http://www.python.org
+
+.. note::
+    xcode-select --install to install the tools on mac
+
+----
+
+Git Install
+===========
+
+* Included on OS X
+* Install from package repos on Linux
+* http://git-scm.com/downloads for other installers
+
+.. note::
+
+    We will be using git during the course
 
 ----
 
 PyCharm Install
 ===============
 
+* Installers for Mac and Windows
 * Requires Java
 
 .. code:: shell
@@ -619,6 +638,24 @@ Quick Git Primer
 .. image:: figures/git-committing.svg
 
 ----
+
+Setup git Environment
+=====================
+
+* Name
+* Email Address
+
+----
+
+Quick git Excercises
+====================
+
+* Initialize your PyCharm Introduction
+* Stage all of the project files
+* Commit the changes
+* Do the "Comments" tutorial
+* Diff your changes
+* Stage and Commit these changes
 
 Quick Overview of computer languages
 ====================================
