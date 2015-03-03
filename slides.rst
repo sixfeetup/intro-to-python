@@ -1138,9 +1138,7 @@ You can add lists together.
 
 .. code:: python
 
-    >>> groceries
-    ['vegetables', 'chips', 'milk']
-    >>> groceries = groceries + ['ham', 'eggs']
+    >>> groceries = ['vegetables', 'chips', 'milk'] + ['ham', 'eggs']
     >>> groceries
     ['vegetables', 'chips', 'milk', 'ham', 'eggs']
 
@@ -1159,8 +1157,7 @@ Accessing List Elements
 
 .. code:: python
 
-    >>> groceries
-    ['vegetables', 'chips', 'milk', 'ham', 'eggs', 'bacon']
+    >>> groceries = ['vegetables', 'chips', 'milk', 'ham', 'eggs', 'bacon']
     >>> groceries[0]
     'vegetables'
     >>> groceries[2]
@@ -1187,6 +1184,8 @@ Remove a specific item
 .. code:: python
 
     >>> groceries.remove('vegetables')
+    >>> groceries
+    ['chips', 'milk', 'ham', 'eggs', 'bacon']
 
 ----
 
@@ -1197,8 +1196,7 @@ Remove an item based on its index. Default is the last element.
 
 .. code:: python
 
-    >>> groceries
-    ['chips', 'milk', 'ham', 'eggs', 'bacon']
+    >>> groceries = ['chips', 'milk', 'ham', 'eggs', 'bacon']
     >>> savethebacon = groceries.pop()
     >>> savethebacon
     'bacon'
