@@ -1321,29 +1321,91 @@ Set
 
 ----
 
+Conditional Loops
+==========================================
 
-* Conditional Loops
-* Logical Operators
-* Loops
-* Functions
-* Style and Idioms
-* Algorithms and code
-* Classes and Objects
-* Modules and packages
-* Building Command Line Programs
-* Working with Files
+----
+
+Logical Operators
+==========================================
+
+----
+
+Loops
+==========================================
+
+----
+
+Functions
+==========================================
+
+----
+
+Style and Idioms
+==========================================
+
+----
+
+Algorithms and code
+==========================================
+
+----
+
+Classes and Objects
+==========================================
+
+----
+
+Modules and packages
+==========================================
+
+----
+
+Building Command Line Programs
+==========================================
+
+----
+
+Working with Files
+==========================================
+
   - read in a CSV file
-* Working with the web
+
+----
+
+Working with the web
+==========================================
+
   - show urllib2
   - install requests and show the good life
-* Testing your code
-* Error handling
-* Logging
-* Defensive Programming and Common Gotchas
-* Tools
+
+----
+
+Testing your code
+==========================================
+
+----
+
+Error handling
+==========================================
+
+----
+
+Logging
+==========================================
+
+----
+
+Defensive Programming and Common Gotchas
+==========================================
+
+----
+
+Tools
+==========================================
+
   - Basic Shell Commands
   - Reading a Diff
-
 
 ----
 
