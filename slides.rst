@@ -969,13 +969,41 @@ Strings
 .. code:: python
 
     s = 'hi'
-    print s[1]          ## i
-    print len(s)        ## 2
-    print s + ' there'  ## hi there
+    print(s[1])          ## i
+    print(len(s))        ## 2
+    print(s + ' there')  ## hi there
 
 .. note::
 
     Characters in a string can be accessed using the standard [ ] syntax
+
+    Strings support operators like + and *
+
+    What is the standard [ ] syntax
+
+----
+
+Slicing Strings
+===============
+
+The "slice" syntax is a handy way to refer to sub-parts of sequences
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+string[start:end]
+
+.. image:: figures/hello.png
+
+.. note::
+
+    The slice s[start:end] is the elements beginning at start and extending up to but not including end. the Suppose we have s = "Hello"
+
+    The standard zero-based index numbers give easy access to chars near the start of the string. As an alternative, Python uses negative numbers to give easy access to the chars at the end of the string
+
+    It is a neat truism of slices that for any index n, s[:n] + s[n:] == s
+
+    Or put another way s[:n] and s[n:] always partition the string into two string parts, conserving all the characters
+
+    Demo string immutability, try to set one character in a string
 
 ----
 
@@ -985,7 +1013,12 @@ Strings
 .. code:: python
 
   pi = 3.14
-  ##text = 'The value of pi is ' + pi      ## NO, does not work
+  text = 'The value of pi is ' + pi      ## NO, does not work
+
+But...
+
+.. code:: python
+
   text = 'The value of pi is '  + str(pi)  ## yes
 
 .. note::
@@ -1000,13 +1033,60 @@ String Methods
 Strings are very powerful in Python
 +++++++++++++++++++++++++++++++++++
 
+
+* s.lower(), s.upper()
+* s.strip()
+* s.isalpha()/s.isdigit()/s.isspace()...
+* s.startswith('other'), s.endswith('other')
+* s.find('other')
+* s.replace('old', 'new')
+* s.split('delim')
+* s.join(list)
+
 .. note::
 
     http://rgruet.free.fr/PQR27/PQR2.7.html
 
     https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 
+    We could use regular expressions, but they get complicated and hard to maintain fast
+
 ----
+
+String Formatting
+=================
+
+.. code:: python
+
+    >>> "The sum of 1 + 2 is {0}".format(1+2)
+    >>> thing = "bucket"
+    >>> "Bring me a {}".format(thing)
+    >>> "My quest is {name}".format(name="simple")
+
+Advanced Examples
++++++++++++++++++
+
+.. code:: python
+
+    >>> '{:<30}'.format('left aligned')
+    >>> '{:>30}'.format('right aligned')
+    >>> '{:^30}'.format('centered')
+    >>> '{:*^30}'.format('centered')
+    >>> '{:,}'.format(1234567890)
+    >>> points = 19
+    >>> total = 22
+    >>> 'Correct answers: {:.2%}'.format(points/total)
+
+
+.. note::
+
+     The string on which this method is called can contain literal text or replacement fields delimited by braces {}
+
+    https://docs.python.org/3/library/string.html#formatstrings
+
+----
+
+
 
 * Data Structures
 * Conditional Expressions
