@@ -144,7 +144,7 @@ PyCharm Install
 * Installers for Mac and Windows
 * Requires Java
 
-.. code:: shell
+.. code:: sh
 
     $ $EXTRACTION_PATH/pycharm-edu-1.0.1/bin/pycharm.sh  
 
@@ -1094,8 +1094,8 @@ Advanced Examples
 
 ----
 
-Condition Expressions
-=====================
+Conditional Expressions
+=======================
 
 It's about making decisions
 +++++++++++++++++++++++++++
