@@ -1,7 +1,7 @@
 .. -*- coding: utf-8 -*-
 
 :title: Intro to Programming
-:event: ElevenFifty
+:event: Eleven Fifty
 :author: Calvin Hendryx-Parker
 :pygments: tango
 :css: custom.css
@@ -30,9 +30,12 @@ Six Feet Up, Inc.
 Eleven Fifty Instructor
 
 .. note::
+
     Introduce yourself, why are you the person they should be listening to for
     the next 5 days.
+
     Started programming in 1998 (PHP, Visual Basic and ASP)
+
     Started using Python in 1999 (with Zope)
 
 ----
@@ -41,10 +44,15 @@ Quick Survey
 ============
 
 .. note::
+
     Why did you sign up for this course?
+
     Who has written a program before?
+
     Who knows what the console or terminal is on your computer?
+
     Would you rate yourself an expert at Excel?
+
     Who has done an intro programming course before?
    
 ----
@@ -56,7 +64,9 @@ Goals
 * Build useful software you can use now
 
 .. note::
+
     End project will be to build tools to manipulate CSV data you might use in Excel
+
     Python is the most popular teching language at the university level right now
 
     Python creator Guido von Rossum believes Python caught on in the labs because “scientists often need to improvise when trying to interpret results, so they are drawn to dynamic languages which allow them to work very quickly and see results almost immediately.”
@@ -74,7 +84,9 @@ http://webchat.freenode.net?channels=#ElevenFifty
 irc://chat.freenode.net/ElevenFifty
 
 .. note::
+
     Internet Relay Chat can be used to overthrow govermnents
+
     but more importantly, it is a space where many projects developers gather and answer questions
 
 ----
@@ -108,6 +120,7 @@ Python Install
 .. _python.org: http://www.python.org
 
 .. note::
+
     xcode-select --install to install the tools on mac
 
 ----
@@ -136,6 +149,7 @@ PyCharm Install
     $ $EXTRACTION_PATH/pycharm-edu-1.0.1/bin/pycharm.sh  
 
 .. note::
+
    ubuntu ppa for java http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html
 
 ----
@@ -204,9 +218,13 @@ Algorithms
 ==========
 
 .. note::
+
     Fancy name for instructions we give to computers
+
     Like a recipes with specific steps to follow
+
     Usually with a lot more steps and written in a programming language like Python
+
     Imagine telling someone to make a PB&J and they have no idea what a knife is or how to open the peanut butter
 
 ----
@@ -222,7 +240,9 @@ Quick Calculator
     
 
 .. note::
+
     Open PyCharm and get into the python shell to try it out as a calculator
+
     In the programming world, we call the + and - operators
 
 ----
@@ -238,11 +258,17 @@ More Math
     >>> 10 / 3
 
 .. note::
+
     careful with integers and decimals
+
     Python 3 knows what you "mean", but python 2 would not give you the same answer
+
     integers vs floats (decimals)
+
     Ruby for example will tell you 10/3 is 3
+
     Python 2 is also the same
+
     If you want decimals, you have to talk in decimals in those languages
 
 ----
@@ -266,6 +292,7 @@ Comparison Operators
      - Greater than or equal to
 
 .. note::
+
     we will go over a coule examples and discover another datatype of Python
 
 ----
@@ -282,6 +309,7 @@ Comparison Practice
     >>> 5 >= 6
 
 .. note::
+
     Try these out and see what the interpreter returns to you
 
 ----
@@ -308,7 +336,9 @@ IDE
 * Eclipse
 
 .. note::
+
     explain IDE
+
     git init and then add all the course files
 
 ----
@@ -332,11 +362,17 @@ At a high level, computers do four things:
 - interact with us
 
 .. note::
+
     most of us use windows, icons, mice, and pointers
+
     These technologies didn't become widespread until the 1980s
+
     Going back past the 1950s, the only way to interact with early computers was to rewire them.
+
     But in between, from the 1950s to the 1980s, most people used line printers.
+
     These devices only allowed input and output of the letters, numbers, and punctuation found on a standard keyboard,
+
     so programming languages and interfaces had to be designed around that constraint.
 
 ----
@@ -348,8 +384,11 @@ CLI vs GUI
 ++++++++++
 
 .. note::
+
     The heart of a CLI is a **read-evaluate-print loop**, or REPL:
+
     when the user types a command and then presses the enter (or return) key,
+
     the computer reads it, executes it, and prints its output.
 
 ----
@@ -363,8 +402,11 @@ REPL
 * **L** oop
 
 .. note::
+
     This description makes it sound as though the user sends commands directly to the computer,
+
     and the computer sends output directly to the user.
+
     In fact, there is usually a program in between called a **command shell**.
 
 ----
@@ -377,6 +419,7 @@ Popular Shells
 * csh
 
 .. note::
+
     Windows has a shell as well `cmd.exe`
 
 ----
@@ -388,6 +431,7 @@ Windows Shell Alternatives
 * Cygwin
 
 .. note::
+
     We will not cover these!
 
 ----
@@ -401,6 +445,7 @@ Let's get started
 
 
 .. note::
+
    The dollar sign is a prompt, which shows us that the shell is waiting for input; your shell may show something more elaborate.
 
 ----
@@ -419,11 +464,17 @@ Run some commands
     /home/calvin
 
 .. note::
+
     finds a program called whoami,
+
     runs that program,
+
     displays that program's output, then
+
     displays a new prompt to tell us that it's ready for more commands.
+
     whoami and why not whereami?
+
     in the early 1970s, when Unix was first being developed, every keystroke counted: the devices of the day were slow, and backspacing on a teletype was so painful that cutting the number of keystrokes in order to cut the number of typing mistakes was actually a win for usability
 
 ----
@@ -434,6 +485,7 @@ The Filesystem
 .. image:: figures/filesystem.svg
 
 .. note::
+
     To understand what a "home directory" is, let's have a look at how the file system as a whole is organized. At the top is the root directory that holds everything else. We refer to it using a slash character / on its own; this is the leading slash in /users/nelle.
 
 ----
@@ -444,6 +496,7 @@ Home Directories
 .. image:: figures/home-directories.svg
 
 .. note::
+
     Underneath /users, we find one directory for each user with an account on this machine
 
     two meanings for the / character. in front of name it is the directory root, inside a name, it is a seperator.
@@ -479,8 +532,11 @@ Listing Files
     pdb/              planets.txt   sunspot.txt
 
 .. note::
+
     we use an flag `-F` to change the output
+
     we use an argument to get different information
+
     data doesn't have a slash, it is relative to where you are
 
 ----
@@ -495,6 +551,7 @@ Listing Files
     network.cfg
 
 .. note::
+
     Now we are using an absolute path
 
 ----
@@ -509,7 +566,9 @@ Changing Directories
     /home/calvin/data
 
 .. note::
+
     nothing fancy here, we change into the directory
+
     try running `pwd`
 
 .. code:: sh
@@ -519,6 +578,7 @@ Changing Directories
     /home/calvin
 
 .. note::
+
     ".." is a special directory meaning the one containing this one or its parent
     this special directory doesn't show up unless we use the `-a` flag
     the current directory is "."
@@ -536,14 +596,14 @@ Creating Files and Directories
 
     $ mkdir thesis
 
-.. note::
-    use ls to verify that your directory has been created
-
 .. code:: sh
 
     $ cd thesis
     $ touch draft.txt
 
+.. note::
+
+    use ls to verify that your directory has been created
 
 ----
 
@@ -553,9 +613,6 @@ Removing Files and Directories
 .. code:: sh
 
     $ rm draft.txt
-
-.. note::
-    there is no "trash" here, deleting is forever
 
 .. code:: sh
 
@@ -572,6 +629,10 @@ Removing Files and Directories
 
     $ rm -r thesis
 
+.. note::
+
+    there is no "trash" here, deleting is forever
+
 ----
 
 Moving Files and Directories
@@ -582,6 +643,7 @@ Moving Files and Directories
     $ mv thesis/draft.txt .
 
 .. note::
+
     Can do the same as a copy as well using `cp`
 
 ----
@@ -596,10 +658,13 @@ Wildcards
 +++++++++++++++++++++++++
 
 .. note::
+
     \* matches zero or more charaters
+
     \? matches one charater
 
     we can talk more shell later, but lets get to some programming
+
     pipes and redirecting output are extremely useful as a developer
 
 ----
@@ -613,7 +678,9 @@ Version Control
 * CVS
 
 .. note::
+
     we will only cover git
+
     mention github and bitbucket as social coding platforms
 
 ----
@@ -657,8 +724,30 @@ Quick git Excercises
 * Diff your changes
 * Stage and Commit these changes
 
-Quick Overview of computer languages
+----
+
+Quick Overview of Computer Languages
 ====================================
+
+* Low Level
+* High Level
+* Compiled
+* Interpreted
+* Strongly Typed
+* Dynamically Typed
+* Weakly Typed
+
+.. note::
+
+     languages require total and complete detail about everything. C and C++ are such languages
+
+     Other languages will make all sorts of assumptions, and this lets the programmer specify less detail. Python and Basic are such languages, and are called high-level languages
+
+    Java and C are strongly typed
+
+    Python is Strongly typed, but typically it is referred to as dynamically typed
+
+    Javascript, Perl and PHP are weakly typed
 
 ----
 
@@ -672,6 +761,7 @@ Let's get this started with the right mindset
     >>> import this
 
 .. note::
+
     These are specific to Python, but let's go over them quickly and we will refer back to them from time to time during the class
     
 ----
@@ -818,6 +908,8 @@ Python has many native datatypes. Here are the important ones:
 .. note::
     Some languages make you declare the type of a value when you assign it, but Python determines it for you and tracks it internally so you don't have to
     "Duck Typing"
+    
+    Do PyCharm Variables Excercises
 
 ----
 
@@ -828,10 +920,93 @@ Warning: Gory Details Ahead
 +++++++++++++++++++++++++++
 
 .. note::
+
    gory details ahead
+
+   Briefly mentions character encoding and unicode usage in Python 3
+
+   all strings in python are unicode
 
 ----
 
+Strings
+=======
+
+Examples:
++++++++++
+
+.. code:: python
+
+    >>> "Hello!"
+    >>> "Eleven Fifty"
+    >>> "3 + 5"
+
+Try this:
++++++++++
+
+.. code:: python
+
+    >>> apple
+
+.. note::
+
+    Python has a built-in string class named "str" with many handy features
+
+    Strings must be in quotes
+
+    String literals can be enclosed by either double or single quotes, although single quotes are more commonly used.
+
+    A double quoted string literal can contain single quotes without any fuss
+
+    Python strings are "immutable" which means they cannot be changed after they are created
+
+
+----
+
+Strings
+=======
+
+.. code:: python
+
+    s = 'hi'
+    print s[1]          ## i
+    print len(s)        ## 2
+    print s + ' there'  ## hi there
+
+.. note::
+
+    Characters in a string can be accessed using the standard [ ] syntax
+
+----
+
+Strings
+=======
+
+.. code:: python
+
+  pi = 3.14
+  ##text = 'The value of pi is ' + pi      ## NO, does not work
+  text = 'The value of pi is '  + str(pi)  ## yes
+
+.. note::
+
+    Unlike Java, the '+' does not automatically convert numbers or other types to string form. The str() function converts values to a string form so they can be combined with other strings.
+
+----
+
+String Methods
+==============
+
+Strings are very powerful in Python
++++++++++++++++++++++++++++++++++++
+
+.. note::
+
+    http://rgruet.free.fr/PQR27/PQR2.7.html
+
+    https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+
+----
 
 * Data Structures
 * Conditional Expressions
