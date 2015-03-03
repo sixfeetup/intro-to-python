@@ -1236,6 +1236,21 @@ Like with strings, you can slice
 
 ----
 
+Tuple
+=====
+
+----
+
+Dictionary
+==========
+
+----
+
+Set
+===
+
+----
+
 Conditional Expressions
 =======================
 
@@ -1345,21 +1360,6 @@ Boolean Operators
     The boolean operators are the spelled out words *and*, *or*, *not* (Python does not use the C-style && || !).
 
     Let's do the conditional exercises on PyCharm to practice
-
-----
-
-Tuple
-=====
-
-----
-
-Dictionary
-==========
-
-----
-
-Set
-===
 
 ----
 
