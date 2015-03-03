@@ -911,6 +911,7 @@ Python has many native datatypes. Here are the important ones:
     
     Do PyCharm Variables Excercises
 
+
 ----
 
 Strings
@@ -1089,7 +1090,123 @@ Advanced Examples
 
 
 * Data Structures
-* Conditional Expressions
+
+
+----
+
+Condition Expressions
+=====================
+
+It's about making decisions
++++++++++++++++++++++++++++
+
+::
+
+    If you're hungry, let's each lunch
+    
+    If the trash is full, go empty it.
+
+.. note::
+
+    Check out IFTTT.com
+
+----
+
+``if`` Statements
+=================
+
+.. code:: python
+
+    >>> name = "Calvin"
+    >>> if name == "Calvin":
+    >>>     print("Hi Calvin!")
+
+.. note::
+
+    check out the usage of whitespace here and the lack of curly braces and parens
+
+    Python does not use { } to enclose blocks of code for if/loops/function
+
+    indentation/whitespace to group statements
+
+----
+
+``if`` Statements
+=================
+
+::
+
+    If you're hungry, let's eat lunch.
+        Or else we can eat in an hour.
+
+    If there's mint ice cream. I'll have a scoop.
+        Or else I'll take vanilla.
+
+.. code:: python
+
+    >>> if name == "Calvin":
+    >>>     print("Hi Calvin!")
+    >>> else:
+    >>>     print("Impostor!")
+
+.. note::
+
+    Now we add an extra choice
+
+----
+
+``if`` Statements
+=================
+
+::
+
+    If there's mint ice cream. I'll have a scoop.
+        Or else if we have vanilla, I'll have 2!
+        Or else if there's chocolate, give me 3!
+        Or I'll just have a donut.
+
+.. code:: python
+
+    >>> if name == "Calvin":
+    >>>     print("Hi Calvin!")
+    >>> elif name == "John":
+    >>>     print("Hi John!")
+    >>> else:
+    >>>     print("Who are you?")
+
+.. note::
+
+    Now we added even more choice!
+
+    and it can have *elif* and *else* clauses (mnemonic: the word "elif" is the same length as the word "else").
+
+----
+
+Boolean Operators
+=================
+
+.. code:: python
+
+    if speed >= 80:
+      print 'License and registration please'
+      if mood == 'terrible' or speed >= 100:
+        print 'You have the right to remain silent.'
+      elif mood == 'bad' or speed >= 90:
+        print "I'm going to have to write you a ticket."
+        write_ticket()
+      else:
+        print "Let's try to keep it under 80 ok?"
+
+
+.. note::
+
+    The boolean operators are the spelled out words *and*, *or*, *not* (Python does not use the C-style && || !).
+
+    Let's do the conditional exercises on PyCharm to practice
+
+----
+
+
 * Conditional Loops
 * Logical Operators
 * Loops
