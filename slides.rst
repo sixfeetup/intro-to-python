@@ -1263,6 +1263,50 @@ The immutable version of a list
 Dictionary
 ==========
 
+Look up an item in the dictionary.
+
+.. code:: python
+
+    >>> users = {
+    ...      'calvinhp': 'Calvin Hendryx-Parker',
+    ...      'sjobs': 'Steve Jobs',
+    ... }
+    >>> users['sjobs']
+    'Steve Jobs'
+
+Dictionary
+==========
+
+.. code:: python
+
+    >>> users.get('jdoe', '')
+    ''
+    >>> users.get('jdoe', None)
+
+.. note::
+
+    Use get to provide a fallback
+
+    Make sure the fallback makes sense for the value it replaces
+
+----
+
+Add an item
+============
+
+.. code:: python
+
+    >>> users['bgates'] = 'Bill Gates'
+
+----
+
+Delete an item
+===============
+
+.. code:: python
+
+   >>> del users['sjobs']
+
 ----
 
 Set
