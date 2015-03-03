@@ -1222,6 +1222,18 @@ Remove an item based on its index. Default is the last element.
 List slicing
 ============
 
+Like with strings, you can slice
+
+.. code:: python
+
+    >>> groceries = ['chips', 'milk', 'ham', 'eggs', 'bacon']
+    >>> groceries[3:]
+    ['eggs', 'bacon']
+    >>> groceries[:3]
+    ['chips', 'milk', 'ham']
+    >>> groceries[2:4]
+    ['ham', 'eggs']
+
 ----
 
 Conditional Expressions
