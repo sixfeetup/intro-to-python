@@ -1237,6 +1237,27 @@ Like with strings, you can slice
 Tuple
 =====
 
+The immutable version of a list
+
+.. code:: python
+
+    >>> states = ('published', 'private', 'pending')
+    >>> states[2]
+    'pending'
+    >>> states.append('draft')
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    AttributeError: 'tuple' object has no attribute 'append'
+
+
+.. note::
+
+    Faster than a list
+
+    Has its use when things are a set list
+
+    Can also be a dictionary key.
+
 ----
 
 Dictionary
