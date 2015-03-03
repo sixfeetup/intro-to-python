@@ -1087,10 +1087,110 @@ Advanced Examples
 
 ----
 
+List
+====
 
+A list is an ordered container of objects
 
-* Data Structures
+.. code:: python
 
+   groceries = ['vegetables', 'chips', 'milk']
+   mixed_bag = [1, 'two', 3.0, 'four']
+   inception = [1, [1, [1, 1]]]
+
+.. note::
+
+    It can contain strings
+
+    Mix between types
+
+    Even contain lists that contain more lists
+
+----
+
+List length
+===========
+
+We can use ``len()`` to check the length of a list
+
+.. code:: python
+
+   >>> len(groceries)
+   3
+   >>> len(mixed_bag)
+   4
+   >>> len(inception)
+   2
+
+.. note::
+
+    Notice that the return value of len is an integer
+
+    The inception list has more items, but at the top level, just an int and
+    another list.
+
+----
+
+Adding elements
+===============
+
+You can add lists together.
+
+.. code:: python
+
+   >>> two_lists = [1, 3, 5] + [2, 4, 6]
+   >>> two_lists
+   [1, 3, 5, 2, 4, 6]
+
+Or add a value.
+
+.. code:: python
+
+   >>> two_lists.append(7)
+   >>> two_lists
+   [1, 3, 5, 2, 4, 6, 7]
+
+----
+
+Removing elements
+==================
+
+.. code:: python
+
+   >>> two_lists
+   [1, 3, 5, 2, 4, 6, 7]
+   >>> two_lists.pop()
+   7
+   >>> two_lists.pop(2)
+   5
+
+----
+
+Accessing List Elements
+=======================
+
+.. code:: python
+
+    >>> groceries[0]
+    'vegetables'
+    >>> groceries[2]
+    'milk'
+    >>> groceries[-1]
+    'milk'
+    >>> groceries[-3]
+    'vegetables'
+
+.. note::
+
+    Notice that indexing starts at 0
+
+    Going in reverse starting with -1, to retrieve values near the end of the
+    list
+
+----
+
+List slicing
+============
 
 ----
 
@@ -1203,6 +1303,21 @@ Boolean Operators
     The boolean operators are the spelled out words *and*, *or*, *not* (Python does not use the C-style && || !).
 
     Let's do the conditional exercises on PyCharm to practice
+
+----
+
+Tuple
+=====
+
+----
+
+Dictionary
+==========
+
+----
+
+Set
+===
 
 ----
 
