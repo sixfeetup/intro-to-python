@@ -1094,9 +1094,9 @@ A list is an ordered container of objects
 
 .. code:: python
 
-   groceries = ['vegetables', 'chips', 'milk']
-   mixed_bag = [1, 'two', 3.0, 'four']
-   inception = [1, [1, [1, 1]]]
+    groceries = ['vegetables', 'chips', 'milk']
+    mixed_bag = [1, 'two', 3.0, 'four']
+    inception = [1, [1, [1, 1]]]
 
 .. note::
 
@@ -1115,12 +1115,12 @@ We can use ``len()`` to check the length of a list
 
 .. code:: python
 
-   >>> len(groceries)
-   3
-   >>> len(mixed_bag)
-   4
-   >>> len(inception)
-   2
+    >>> len(groceries)
+    3
+    >>> len(mixed_bag)
+    4
+    >>> len(inception)
+    2
 
 .. note::
 
@@ -1138,31 +1138,19 @@ You can add lists together.
 
 .. code:: python
 
-   >>> two_lists = [1, 3, 5] + [2, 4, 6]
-   >>> two_lists
-   [1, 3, 5, 2, 4, 6]
+    >>> groceries
+    ['vegetables', 'chips', 'milk']
+    >>> groceries = groceries + ['ham', 'eggs']
+    >>> groceries
+    ['vegetables', 'chips', 'milk', 'ham', 'eggs']
 
 Or add a value.
 
 .. code:: python
 
-   >>> two_lists.append(7)
-   >>> two_lists
-   [1, 3, 5, 2, 4, 6, 7]
-
-----
-
-Removing elements
-==================
-
-.. code:: python
-
-   >>> two_lists
-   [1, 3, 5, 2, 4, 6, 7]
-   >>> two_lists.pop()
-   7
-   >>> two_lists.pop(2)
-   5
+    >>> groceries.append('bacon')
+    >>> groceries
+    ['vegetables', 'chips', 'milk', 'ham', 'eggs', 'bacon']
 
 ----
 
@@ -1171,21 +1159,63 @@ Accessing List Elements
 
 .. code:: python
 
+    >>> groceries
+    ['vegetables', 'chips', 'milk', 'ham', 'eggs', 'bacon']
     >>> groceries[0]
     'vegetables'
     >>> groceries[2]
     'milk'
     >>> groceries[-1]
-    'milk'
+    'bacon'
     >>> groceries[-3]
-    'vegetables'
+    'ham'
 
 .. note::
 
-    Notice that indexing starts at 0
+    Notice that indexing starts at 0. The same we talked about for strings.
 
     Going in reverse starting with -1, to retrieve values near the end of the
     list
+
+----
+
+Removing Elements
+=================
+
+Remove a specific item
+
+.. code:: python
+
+    >>> groceries.remove('vegetables')
+
+----
+
+Removing elements
+==================
+
+Remove an item based on its index. Default is the last element.
+
+.. code:: python
+
+    >>> groceries
+    ['chips', 'milk', 'ham', 'eggs', 'bacon']
+    >>> savethebacon = groceries.pop()
+    >>> savethebacon
+    'bacon'
+    >>> groceries.pop(1)
+    'milk'
+    >>> groceries.pop(42)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    IndexError: pop index out of range
+
+.. note::
+
+    Calling pop defaults to the last item
+
+    The pop method returns the value to you
+
+    It can also pop any item given the index, if it exists.
 
 ----
 
