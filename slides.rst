@@ -1274,8 +1274,12 @@ Look up an item in the dictionary.
     >>> users['sjobs']
     'Steve Jobs'
 
+----
+
 Dictionary
 ==========
+
+Use get to return a value if the item does not exist
 
 .. code:: python
 
@@ -1294,6 +1298,8 @@ Dictionary
 Add an item
 ============
 
+Add a new key value pair.
+
 .. code:: python
 
     >>> users['bgates'] = 'Bill Gates'
@@ -1302,6 +1308,8 @@ Add an item
 
 Delete an item
 ===============
+
+Using the key of the item, delete it.
 
 .. code:: python
 
