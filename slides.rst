@@ -1312,6 +1312,48 @@ Delete an item
 Set
 ===
 
+A very useful data type. Like a list, but only containing unique items and no
+order.
+
+.. code:: python
+
+    >>> colors = {'red', 'green'}
+    >>> colors.add('black')
+    >>> colors.add('green')
+    >>> colors
+    {'red', 'green', 'black'}
+
+----
+
+Set operators
+=============
+
+.. code:: python
+
+    >>> colors = {'red', 'green', 'black'}
+    >>> winter_colors = {'white', 'grey', 'black', 'red', 'green'}
+    >>> summer_colors = {'green', 'yellow', 'blue', 'white'}
+    >>> winter_colors & summer_colors
+    {'green', 'white'}
+    >>> winter_colors - summer_colors
+    {'black', 'grey', 'red'}
+    >>> winter_colors ^ summer_colors
+    {'red', 'yellow', 'blue', 'black', 'grey'}
+    >>> colors < winter_colors
+    True
+
+.. note::
+
+    Two sets to compare with
+
+    Intersection: what is the same between the two
+
+    Difference: remove items that are in the other set
+
+    Symetric Difference: All items that aren't in both
+
+    is Subset: Test if all the items in this set are in the other
+
 ----
 
 Conditional Expressions
