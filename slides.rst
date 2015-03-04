@@ -1991,6 +1991,77 @@ How these are seen
 Modules and packages
 ==========================================
 
+Python comes with a standard library of built-in modules. Here are a couple
+examples.
+
+Find out what version of Python you are running
+
+.. code:: python
+
+    >>> import sys
+    >>> sys.version_info
+    sys.version_info(major=3, minor=4, micro=2, releaselevel='final', serial=0)
+
+List the contents of the current directory
+
+.. code:: python
+
+    >>> import os
+    >>> os.listdir('.')
+    ['Documents', 'Desktop', 'README.md']
+
+----
+
+Modules
+========
+
+Modules are made available via the ``sys.path`` setting. This is a list of
+directories where Python tries to find the module. Here is an example from a
+virtualenv on Ubuntu.
+
+.. code:: python
+
+    >>> import sys
+    >>> sys.path
+    ['',
+    '/opt/python3/lib/python3.4',
+    '/opt/python3/lib/python3.4/plat-x86_64-linux-gnu',
+    '/opt/python3/lib/python3.4/lib-dynload',
+    '/usr/lib/python3.4',
+    '/usr/lib/python3.4/plat-x86_64-linux-gnu',
+    '/opt/python3/lib/python3.4/site-packages']
+
+.. note::
+
+    The goal is the keep a clean global site packages (using virtualenv helps)
+
+    This may not be possible on some linux distros, but virtualenv still saves
+    the day here.
+
+----
+
+Packaging
+==========
+
+Like most languages, Python offers a way to install packages. We will typically
+do this with a virtualenv.
+
+.. code:: sh
+
+    $ virtualenv testenv
+    $ source testenv/bin/activate
+    (testenv)$ pip install requests
+
+The pip command is how we interact with Python package index.
+
+.. note::
+
+    We created a new isolated enviroment
+
+    Then installed requests into the sys.path via pip
+
+    This is much deeper topic, but we just wanted to cover the basics
+
 ----
 
 Building Command Line Programs
