@@ -1611,18 +1611,106 @@ Boolean Operators
 
 ----
 
-Conditional Loops
-==========================================
-
-----
-
-Logical Operators
-==========================================
-
-----
-
 Loops
-==========================================
+=====
+
+    Elwood: What kind of music do you usually have here?
+
+    Claire: Oh, we got both kinds. We got country *and* western. 
+
+Loops come in two flavors
++++++++++++++++++++++++++
+
+* Counting Loops
+* Conditional Loops
+
+.. note::
+
+    We are going to talk about for loops and while loops
+
+----
+
+`for` or Counting Loops
+=======================
+
+.. code:: python
+
+    squares = [1, 4, 9, 16]
+    sum = 0
+    for num in squares:
+      sum += num
+    print sum  ## 30
+
+.. note::
+
+    Probably our most common case
+
+    You need to loop over a sequence of things
+
+    Many things in Python are iterable which speeds things up
+
+    Careful to not modify your list during iteration
+
+----
+
+Quick note about `in`
+=====================
+
+Don't forget that you can use it also to check for membership
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. code:: python
+
+  list = ['larry', 'curly', 'moe']
+  if 'curly' in list:
+    print 'yay'
+
+.. note::
+
+    Using the in keyword is preferrable to looping over the list to test if the value is there
+
+    It can also be used with dictionaries to see if a specific key is in a dict
+
+----
+
+Back to Loops
+=============
+
+You can use the `range()` builtin to make a quick list of numbers
+
+.. code:: python
+
+  ## print the numbers from 0 through 99
+  for i in range(100):
+    print i
+
+.. note::
+
+    The combination of the for-loop and the range() function allow you to build a traditional numeric for loop:
+
+    the *break* and *continue* statements
+
+----
+
+`while` or Conditional Loops
+============================
+
+.. code:: python
+
+    >>> count = 0
+    >>> while count < 4:
+            print('The count is:', count)
+            count += 1
+    The count is: 0
+    The count is: 1
+    The count is: 2
+    The count is: 3
+
+.. note::
+
+   the expression needs to evaluate to a boolean and will continue as long as it is True 
+
+    the *break* and *continue* statements
 
 ----
 
