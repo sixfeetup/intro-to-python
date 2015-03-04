@@ -1834,6 +1834,158 @@ Algorithms and code
 Classes and Objects
 ==========================================
 
+Everything in Python is an object. Classes give us a way to create our own.
+
+.. code:: python
+
+    class Widget:
+        pass
+
+That is the minimum we need.
+
+.. code:: python
+
+    >>> my_widget = Widget()
+    >>> type(my_widget)
+    <class '__main__.Widget'>
+
+.. note::
+
+    Use the class reserved word to construct the object
+
+    The pass keyword is just a placeholder to make Python happy
+
+----
+
+Objects
+=======
+
+Create two objects
+
+.. code:: python
+
+    >>> thing1 = Widget()
+    >>> thing2 = Widget()
+
+We can see what happens when modifying each
+
+.. code:: python
+
+    >>> thing1.color = 'red'
+    >>> thing2.color = 'blue'
+    >>> thing1.color
+    'red'
+    >>> thing2.color
+    'blue'
+
+.. note::
+
+    We now have two separate objects with their own settings
+
+----
+
+Class initialization
+=====================
+
+There are so called "magic methods" that exist on objects to allow us to
+override their behavior
+
+.. code:: python
+
+    class Widget:
+        def __init__(self, color='black', shape='square'):
+            self.color = color
+            self.shape = shape
+
+.. note::
+
+    Sets defaults, but also handles additional logic that may be needed
+
+    The first argument to class method is always ``self``
+
+----
+
+Class initialization
+=====================
+
+The ``init`` method is then used on creation.
+
+.. code:: python
+
+    >>> thing1 = Widget()
+    >>> thing1.color
+    'black'
+    >>> thing1.shape
+    'square'
+    >>> thing2 = Widget(color='red')
+    >>> thing2.color
+    'red'
+    >>> thing2.shape
+    'square'
+
+.. note::
+
+    Now we have more control when creating a new object
+
+    Assigning the instantiated class to a variable gives us access to the new object
+
+----
+
+Enhancing the class
+====================
+
+Adding methods to the class make it more powerful
+
+.. code:: python
+
+    class Widget:
+        def __init__(self, color='black', shape='square'):
+            self.color = color
+            self.shape = shape
+
+        def convert_to_circle(self):
+            self.shape = 'circle'
+
+In action
+
+.. code:: python
+
+    >>> thing1 = Widget()
+    >>> thing1.shape
+    'square'
+    >>> thing1.convert_to_circle()
+    >>> thing1.shape
+    'circle'
+
+----
+
+More class magic
+===================
+
+We can make a human and machine readable representation of the object
+
+.. code:: python
+
+    class Widget:
+        def __init__(self, color='black', shape='square'):
+            self.color = color
+            self.shape = shape
+
+        def __repr__(self):
+            return 'Widget(color={}, shape={})'.format(self.color, self.shape)
+
+        def __str__(self):
+            return 'A {} colored {}'.format(self.color, self.shape)
+
+How these are seen
+
+.. code:: python
+
+    >>> Widget(color='red')
+    Widget(color='red', shape='square')
+    >>> str(Widget(color='red'))
+    'A red colored square'
+
 ----
 
 Modules and packages
