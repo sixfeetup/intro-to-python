@@ -8,7 +8,7 @@
 
 .. |space| unicode:: 0xA0 .. non-breaking space
 .. |br| raw:: html
-    
+
     <br />
 
 ----
@@ -54,7 +54,7 @@ Quick Survey
     Would you rate yourself an expert at Excel?
 
     Who has done an intro programming course before?
-   
+
 ----
 
 Goals
@@ -146,7 +146,7 @@ PyCharm Install
 
 .. code:: sh
 
-    $ $EXTRACTION_PATH/pycharm-edu-1.0.1/bin/pycharm.sh  
+    $ $EXTRACTION_PATH/pycharm-edu-1.0.1/bin/pycharm.sh
 
 .. note::
 
@@ -160,7 +160,7 @@ What are Computer Programs
 * Collection of instructions
 
   * Interact with the user
-  * Interact with the computer hardware 
+  * Interact with the computer hardware
   * Process data
 
 .. note::
@@ -190,24 +190,24 @@ They follow sets of Instructions
 
     Crust:
     1 box Pillsbury™ refrigerated pie crusts, softened as directed on box
-    
+
     Filling:
     2/3 cup Yoplait® 99% Fat Free creamy vanilla yogurt (from 2-lb container)
     1 container (8 oz) reduced-fat sour cream
     1 box (4-serving size) vanilla instant pudding and pie filling mix
     2 tablespoons orange marmalade
-    
+
     Topping:
     1 cup halved fresh strawberries
     2 kiwifruit, peeled, thinly sliced
     2 tablespoons orange marmalade
-    
+
     Directions:
-    
+
     Step 1: Heat oven to 450°F. Make pie crust as directed on box for One-Crust Baked Shell, using 9-inch tart pan with removable bottom or 9-inch glass pie plate. Bake 9 to 11 minutes or until light golden brown. Cool completely, about 30 minutes.
-    
+
     Step 2: In medium bowl, mix filling ingredients with wire whisk until well blended. Pour into cooled baked shell. Arrange strawberries and kiwifruit on filling.
-    
+
     Step 3: In small microwavable bowl, microwave marmalade uncovered on High 5 to 10 seconds or until melted. Brush over fruit. Refrigerate about 1 hour or until set before serving. Cover and refrigerate any remaining tart.
 
 Source: http://www.foodista.com/blog/2015/02/27/beautiful-strawberry-kiwi-tart
@@ -237,7 +237,7 @@ Quick Calculator
     >>> 2 + 2
     >>> 12 -3
     >>> 9 + 5 - 15
-    
+
 
 .. note::
 
@@ -763,7 +763,7 @@ Let's get this started with the right mindset
 .. note::
 
     These are specific to Python, but let's go over them quickly and we will refer back to them from time to time during the class
-    
+
 ----
 
 Variables
@@ -869,17 +869,17 @@ nametag to an existing object:
     Here, an integer 1 object has a tag labelled "a".
 
     Now the name "a" is attached to an integer 2 object.
-    
+
     The original integer 1 object no longer has a tag "a".  It may live
     on, but we can't get to it through the name "a".  (When an object
     has no more references or tags, it is removed from memory.)
 
     The name "b" is just a second tag bound to the same object as "a".
-    
+
     Although we commonly refer to "variables" even in Python (because
     it's common terminology), we really mean "names" or "identifiers".
     In Python, "variables" are nametags for values, not labelled boxes.
-    
+
     If you get nothing else out of this tutorial, I hope you understand
     how Python names work.  A good understanding is certain to pay
     dividends, helping you to avoid cases like this:
@@ -903,12 +903,12 @@ Python has many native datatypes. Here are the important ones:
 * **Lists** are ordered sequences of values.
 * **Tuples** are ordered, immutable sequences of values.
 * **Sets** are unordered bags of values.
-* **Dictionaries** are *unordered* bags of key-value pairs. 
+* **Dictionaries** are *unordered* bags of key-value pairs.
 
 .. note::
     Some languages make you declare the type of a value when you assign it, but Python determines it for you and tracks it internally so you don't have to
     "Duck Typing"
-    
+
     Do PyCharm Variables Excercises
 
 
@@ -1117,7 +1117,7 @@ A list is an ordered container of objects
 
     Even contain lists that contain more lists
 
-    Assignment with an = on lists does not make a copy. Instead, assignment makes the two variables point to the one list in memory. 
+    Assignment with an = on lists does not make a copy. Instead, assignment makes the two variables point to the one list in memory.
 
 ----
 
@@ -1383,7 +1383,7 @@ String Formatting with Dictionaries
 ===================================
 
 .. code:: python
-   
+
     >>> f = {'foo': 'bar', 'baz': 'bang'}
     >>> "some {foo} string {baz}".format(**f)
     'some bar string bang'
@@ -1506,7 +1506,7 @@ It's about making decisions
 ::
 
     If you're hungry, let's each lunch
-    
+
     If the trash is full, go empty it.
 
 .. note::
@@ -1616,7 +1616,7 @@ Loops
 
     Elwood: What kind of music do you usually have here?
 
-    Claire: Oh, we got both kinds. We got country *and* western. 
+    Claire: Oh, we got both kinds. We got country *and* western.
 
 Loops come in two flavors
 +++++++++++++++++++++++++
@@ -1708,7 +1708,7 @@ You can use the `range()` builtin to make a quick list of numbers
 
 .. note::
 
-   the expression needs to evaluate to a boolean and will continue as long as it is True 
+   the expression needs to evaluate to a boolean and will continue as long as it is True
 
     the *break* and *continue* statements
 
@@ -1815,7 +1815,7 @@ You can assign the return value of the function to a variable
 
     Functions take parameters and can return outputs
 
-    print displays information, but does not give a value 
+    print displays information, but does not give a value
 
     return gives a value to the caller (that's you!)
 
@@ -2012,29 +2012,29 @@ Working with the web
 
     #!/usr/bin/env python
     # -*- coding: utf-8 -*-
-     
+
     import urllib2
-     
+
     gh_url = 'https://api.github.com'
-     
+
     req = urllib2.Request(gh_url)
-     
+
     password_manager = urllib2.HTTPPasswordMgrWithDefaultRealm()
     password_manager.add_password(None, gh_url, 'user', 'pass')
-     
+
     auth_manager = urllib2.HTTPBasicAuthHandler(password_manager)
     opener = urllib2.build_opener(auth_manager)
-     
+
     urllib2.install_opener(opener)
-     
+
     handler = urllib2.urlopen(req)
-     
+
     print handler.getcode()
     print handler.headers.getheader('content-type')
-     
+
     # ------
     # 200
-    # 'application/json' 
+    # 'application/json'
 
 
 ----
@@ -2046,17 +2046,17 @@ Enter Requests
 
     #!/usr/bin/env python
     # -*- coding: utf-8 -*-
-     
+
     import requests
-     
+
     r = requests.get('https://api.github.com', auth=('user', 'pass'))
-     
+
     print r.status_code
     print r.headers['content-type']
-     
+
     # ------
     # 200
-    # 'application/json' 
+    # 'application/json'
 
 ----
 
