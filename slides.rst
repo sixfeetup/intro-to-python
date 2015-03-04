@@ -1717,6 +1717,95 @@ You can use the `range()` builtin to make a quick list of numbers
 Functions
 ==========================================
 
+Functions give us a way to group lines of code.
+
+.. code:: python
+
+    >>> print('Hello')
+    Hello
+    >>> print('again')
+    again
+    >>> print('World!')
+    World!
+
+Grouped as one function
+
+.. code:: python
+
+    def hello_world():
+        print('Hello')
+        print('again')
+        print('World!')
+
+Run it in one command as many times as you want.
+
+.. code:: python
+
+    >>> hello_world()
+    Hello
+    again
+    World!
+
+----
+
+Function arguments
+====================
+
+Functions can have required positional arguments
+
+.. code:: python
+
+    def say_hello(myname)
+        print(‘Hello’, myname)
+
+.. note::
+
+    One positional argument, which is required
+
+----
+
+Keyword arguments
+====================
+
+Functions can also have optional keyword arguments
+
+.. code:: python
+
+    def say_hello(myname, greeting='Hello')
+        print(greeting, myname)
+
+This allows for multiple ways to call the function
+
+.. code:: python
+
+    >>> say_hello('Earthling')
+    'Hello Earthling'
+    >>> say_hello('Earthling', greeting='Greetings!')
+    'Greetings! Earthling'
+
+.. note::
+
+    The optional keyword arg gives us a way to provide a defult value
+
+----
+
+Function return
+================
+
+You can assign the return value of the function to a variable
+
+.. code:: python
+
+    def double(number):
+        return number * 2
+
+As seen here
+
+.. code:: python
+
+    >>> important_value = double(99)
+    >>> more_important = double(important_value)
+
 ----
 
 Style and Idioms
