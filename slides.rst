@@ -2064,15 +2064,96 @@ The pip command is how we interact with Python package index.
 
 ----
 
-Building Command Line Programs
-==========================================
-
-----
-
 Working with Files
 ==========================================
 
-  - read in a CSV file
+Python gives us a way to read and write files.
+
+.. code:: python
+
+    >>> with open('/etc/hosts') as f:
+    ...     for i, line in enumerate(f.readlines()):
+    ...         print('{}|  {}'.format(i + 1, line))
+    1|  127.0.0.1           localhost
+    2|  255.255.255.255     broadcasthost
+    3|  ::1                 localhost
+    4|  fe80::1%lo0         localhost
+
+.. note::
+
+    The ``open`` command allows us to work with files
+
+    Default is to read only
+
+----
+
+Writing files
+===============
+
+Create a new file
+
+.. code:: python
+
+    with open('foo.txt', 'w') as f:
+        f.write('Hello\n\n')
+        f.write('This is more text\n')
+
+.. note::
+
+    Once the with statement finishes, the file is written to.
+
+----
+
+Writing files
+===============
+
+Append to an existing file instead of overwriting it
+
+.. code:: python
+
+    with open('foo.txt', 'a') as f:
+        f.write('additional lines\n')
+        f.write('This is even more text\n')
+
+----
+
+Open a CSV file
+================
+
+Given the following CSV file
+
+.. code::
+
+    Name,Favorite Color,Height
+    Dave,Purple,5'8"
+    Teresa,Blue,5'6"
+    Kate,Perrywinkle Blue,5'2"
+
+.. note::
+
+    The Height column is tricky when it comes to string quoting. This is why we
+    utilize the standard library.
+
+----
+
+Open a CSV file
+================
+
+.. code:: python
+
+    >>> from csv import DictReader
+    >>> with open('sample.csv') as f:
+    ...     csv_reader = DictReader(f)
+    ...     for row in csv_reader:
+    ...         print(row['Name'], 'is', row['Height'])
+    Dave is 5'8"
+    Teresa is 5'6"
+    Kate is 5'2"
+
+----
+
+Building Command Line Programs
+==========================================
 
 ----
 
