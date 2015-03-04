@@ -1725,8 +1725,8 @@ Functions give us a way to group lines of code.
     Hello
     >>> print('again')
     again
-    >>> print('World!')
-    World!
+    >>> print('World')
+    World
 
 Grouped as one function
 
@@ -1735,7 +1735,12 @@ Grouped as one function
     def hello_world():
         print('Hello')
         print('again')
-        print('World!')
+        print('World')
+
+----
+
+Functions
+==========
 
 Run it in one command as many times as you want.
 
@@ -1744,7 +1749,7 @@ Run it in one command as many times as you want.
     >>> hello_world()
     Hello
     again
-    World!
+    World
 
 ----
 
@@ -1756,7 +1761,7 @@ Functions can have required positional arguments
 .. code:: python
 
     def say_hello(myname)
-        print(‘Hello’, myname)
+        print('Hello', myname)
 
 .. note::
 
@@ -1782,12 +1787,12 @@ This allows for multiple ways to call the function
 
     >>> say_hello('Earthling')
     'Hello Earthling'
-    >>> say_hello('Earthling', greeting='Greetings!')
-    'Greetings! Earthling'
+    >>> say_hello('Earthling', greeting='Greetings')
+    'Greetings Earthling'
 
 .. note::
 
-    The optional keyword arg gives us a way to provide a defult value
+    The optional keyword arg gives us a way to provide a default value
 
     Functions are called using parentheses
 
@@ -1803,12 +1808,8 @@ You can assign the return value of the function to a variable
     def double(number):
         return number * 2
 
-As seen here
-
-.. code:: python
-
-    >>> important_value = double(99)
-    >>> more_important = double(important_value)
+    important_value = double(99)
+    more_important = double(important_value)
 
 .. note::
 
