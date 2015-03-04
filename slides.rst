@@ -1614,9 +1614,9 @@ Boolean Operators
 Loops
 =====
 
-    Elwood: What kind of music do you usually have here?
+    **Elwood** What kind of music do you usually have here?
 
-    Claire: Oh, we got both kinds. We got country *and* western.
+    **Claire** Oh, we got both kinds. We got country *and* western.
 
 Loops come in two flavors
 +++++++++++++++++++++++++
@@ -1818,16 +1818,6 @@ You can assign the return value of the function to a variable
     print displays information, but does not give a value
 
     return gives a value to the caller (that's you!)
-
-----
-
-Style and Idioms
-==========================================
-
-----
-
-Algorithms and code
-==========================================
 
 ----
 
@@ -2152,6 +2142,171 @@ Open a CSV file
 
 ----
 
+Style and Idioms
+==========================================
+
+    Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.
+
+    —Brian W. Kernighan, co-author of The C Programming Language and the "K" in "AWK"
+
+----
+
+Indentation
+===========
+
+- 4 space indents
+- Tabs only if the prevailing style
+- Never mix tabs and spaces!
+
+----
+
+Whitespace
+==========
+
+|space|
+
+----
+
+.. code:: python
+
+    important_var  = 5
+    awesome_var    = 15
+    awesome_var+=10
+    my_dict ={ 'spam':'eggs','ham':'parrot'}
+    my_list=[3,   2,1]
+    another_list = [8, 4,5,6 ]
+    extra_list=my_list+another_list
+    sorted ( combined_list,reverse = True)
+
+----
+
+.. code:: python
+
+    important_var = 5
+    awesome_var = 15
+    awesome_var += 10
+    my_dict = {'spam': 'eggs', 'ham': 'parrot'}
+    my_list = [3, 2, 1]
+    another_list = [8, 4, 5, 6]
+    extra_list = my_list + another_list
+    sorted(combined_list, reverse=True)
+
+----
+
+Explicit is better than implicit
+================================
+
+|space|
+
+----
+
+.. code:: python
+
+    import os, sys
+    from my.package import *
+
+----
+
+.. code:: python
+
+    import os
+    import sys
+    from my.package import Octopus, Blowfish
+
+----
+
+Flat is better than nested
+==========================
+
+|space|
+
+----
+
+.. code:: python
+
+    for item in items:
+        if some_check(item):
+            # do some magic
+            if another_check(item):
+                # more magic
+                operate_on(item)
+
+----
+
+.. code:: python
+
+    for item in items:
+        if not some_check(item):
+            continue
+        if not another_check(item):
+            continue
+        # do some magic
+        # more magic
+        operate_on(item)
+
+
+----
+
+.. code:: python
+
+    aws_region = None
+    for k,v in query_response.items():
+        if k == 'entry_list':
+            for i in v:
+                for k, v2 in i.items():
+                    if k == 'name_value_list':
+                        if isinstance(v2, dict):
+                            for k2, v3 in v2.items():
+                                if k2 == 'aws_region':
+                                    aws_region = v3['value']
+
+----
+
+.. code:: python
+
+    aws_region = None
+    entries = query_response.get('entry_list', {})
+    values = entries.get('name_value_list', {})
+    if isinstance(values, dict):
+        aws_region = values.get('aws_region', {}).get('value', None)
+
+
+----
+
+Algorithms and code
+==========================================
+
+.. code:: python
+
+    """
+        binary_search.py
+        Implementation of binary search on a sorted list.
+        Binary Search Overview:
+        ------------------------
+        Recursively partitions the list until the key is found.
+        Time Complexity:  O(lg n)
+        Psuedo Code: http://en.wikipedia.org/wiki/Binary_search
+    """
+    
+    def search(seq, key):
+        lo = 0
+        hi = len(seq) - 1
+    
+        while hi >= lo:
+            mid = lo + (hi - lo) // 2
+            if seq[mid] < key:
+                lo = mid + 1
+            elif seq[mid] > key:
+                hi = mid - 1
+            else:
+                return mid
+        return False
+
+
+--  https://github.com/nryoung/algorithms/blob/master/algorithms/searching/binary_search.py
+
+----
+
 Building Command Line Programs
 ==========================================
 
@@ -2220,6 +2375,18 @@ Testing your code
 Error handling
 ==========================================
 
+.. code:: python
+
+  try:
+    ## Either of these two lines could throw an IOError, say
+    ## if the file does not exist or the read() encounters a low level error.
+    with open(filename, 'rU') as f:
+        text = f.read()
+  except IOError:
+    ## Control jumps directly to here if any of the above lines throws IOError.
+    sys.stderr.write('problem reading:' + filename)
+  ## In any case, the code then continues with the line after the try/except
+
 ----
 
 Logging
@@ -2233,17 +2400,23 @@ Defensive Programming and Common Gotchas
 ----
 
 Tools
-==========================================
+=====
 
-  - Basic Shell Commands
-  - Reading a Diff
+- Diff
+- `flake8 <https://pypi.python.org/pypi/flake8>`_
+  - Combination of `pep8` and `pyflakes`
+- `PyLint <http://www.pylint.org/>`_ / `Frosted <https://github.com/timothycrosley/frosted>`_
+  - More in-depth linting of code
+- `autopep8 <https://pypi.python.org/pypi/autopep8>`_
+  - Automatic PEP8 conformance
 
 ----
 
 Credits
 =======
 
-* Shell -- http://swcarpentry.github.io/shell-novice
-* Variables -- http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
-* Datatypes -- http://www.diveintopython3.net
-* Strings -- http://www.diveintopython3.net/strings.html
+* http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
+* http://www.diveintopython3.net
+* https://github.com/mechanicalgirl/young-coders-tutorial
+* http://swcarpentry.github.io
+* https://developers.google.com/edu/python
