@@ -1085,6 +1085,8 @@ Advanced Examples
 
     https://docs.python.org/3/library/string.html#formatstrings
 
+    Let's hit the exercises
+
 ----
 
 List
@@ -1097,6 +1099,15 @@ A list is an ordered container of objects
     groceries = ['vegetables', 'chips', 'milk']
     mixed_bag = [1, 'two', 3.0, 'four']
     inception = [1, [1, [1, 1]]]
+    colors = ['red', 'blue', 'green']
+
+.. image:: figures/list1.png
+
+.. code:: python
+
+    b = colors
+
+.. image:: figures/list2.png
 
 .. note::
 
@@ -1105,6 +1116,8 @@ A list is an ordered container of objects
     Mix between types
 
     Even contain lists that contain more lists
+
+    Assignment with an = on lists does not make a copy. Instead, assignment makes the two variables point to the one list in memory. 
 
 ----
 
@@ -1234,13 +1247,39 @@ Like with strings, you can slice
 
 ----
 
+List Methods
+============
+
+* list.append(elem)
+* list.insert(index, elem)
+* list.extend(list2)
+* list.index(elem)
+* list.remove(elem)
+* list.sort()
+* list.reverse()
+* list.pop(index)
+
+.. note::
+
+    https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types
+
+----
+
 Tuple
 =====
 
-The immutable version of a list
+The **immutable** version of a ``list()``
 
 .. code:: python
 
+    >>> 1,
+    (1,)
+    >>> (1,)
+    (1,)
+    >>> (1)
+    1
+    >>> ()
+    ()
     >>> states = ('published', 'private', 'pending')
     >>> states[2]
     'pending'
@@ -1251,6 +1290,12 @@ The immutable version of a list
 
 
 .. note::
+
+    We saw that the comma is the tuple constructor, not the parentheses.
+
+    don't forget the comma
+
+    A common typo is to leave a comma even though you don't want a tuple. It can be easy to miss in your code
 
     Faster than a list
 
@@ -1273,6 +1318,23 @@ Look up an item in the dictionary.
     ... }
     >>> users['sjobs']
     'Steve Jobs'
+
+.. code:: python
+
+     dict = {}
+     dict['a'] = 'alpha'
+     dict['g'] = 'gamma'
+     dict['o'] = 'omega'
+
+
+.. image:: figures/dict.png
+
+.. note::
+
+    Dict Hash Table
+
+    Can build up a dict by starting with the the empty dict {}
+
 
 ----
 
@@ -1317,6 +1379,48 @@ Using the key of the item, delete it.
 
 ----
 
+String Formatting with Dictionaries
+===================================
+
+.. code:: python
+   
+    >>> f = {'foo': 'bar', 'baz': 'bang'}
+    >>> "some {foo} string {baz}".format(**f)
+    'some bar string bang'
+
+.. note::
+
+    let's explain that "**" bit, it is about unpacking
+
+    single * unpacks a sequence
+
+    In the same fashion, dictionaries can deliver keyword arguments with the ** -operator:
+
+----
+
+Dictionary Views
+================
+
+* dict.keys()
+* dict.values()
+* dict.items()
+
+.. code:: python
+
+    >>> dishes = {'eggs': 2, 'sausage': 1, 'bacon': 1, 'spam': 500}
+    >>> keys = dishes.keys()
+    >>> values = dishes.values()
+
+.. note::
+
+    keys returns a Set like entity
+
+    These can be iterated over using loops
+
+    IMPORTANT: view objects are dynamic and reflect dict changes
+
+----
+
 Set
 ===
 
@@ -1330,6 +1434,10 @@ order.
     >>> colors.add('green')
     >>> colors
     {'red', 'green', 'black'}
+
+.. note::
+
+    pay attention to the {} here, this isn't a dict
 
 ----
 
@@ -1361,6 +1469,31 @@ Set operators
     Symetric Difference: All items that aren't in both
 
     is Subset: Test if all the items in this set are in the other
+
+----
+
+More about Sets
+===============
+
+* set.union()
+* set.intersection()
+* set.difference()
+* set.symmetric_difference()
+* set.issubset()
+* set.issuperset()
+
+.. code:: python
+
+    >>> set('abc') & 'cbs'
+    >>> set('abc').intersection('cbs')
+
+.. note::
+
+    sets have non-operator versions of the previous operations and might be more readable in certain cercumstances
+
+    Set elements, like dictionary keys, must be hashable
+
+    and the pop() method will return an arbitrary item
 
 ----
 
@@ -1398,6 +1531,8 @@ It's about making decisions
     Python does not use { } to enclose blocks of code for if/loops/function
 
     indentation/whitespace to group statements
+
+    Never mix tabs and spaces.
 
 ----
 
