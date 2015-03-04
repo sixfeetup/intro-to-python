@@ -69,7 +69,7 @@ Goals
 
     Python is the most popular teching language at the university level right now
 
-    Python creator Guido von Rossum believes Python caught on in the labs because “scientists often need to improvise when trying to interpret results, so they are drawn to dynamic languages which allow them to work very quickly and see results almost immediately.”
+    Python creator Guido von Rossum believes Python caught on in the labs because "scientists often need to improvise when trying to interpret results, so they are drawn to dynamic languages which allow them to work very quickly and see results almost immediately."
 
 ----
 
@@ -1817,7 +1817,7 @@ You can assign the return value of the function to a variable
 
     print displays information, but does not give a value 
 
-    return gives a value to the caller (that’s you!)
+    return gives a value to the caller (that's you!)
 
 ----
 
