@@ -1639,7 +1639,7 @@ Loops come in two flavors
     sum = 0
     for num in squares:
       sum += num
-    print sum  ## 30
+    print(sum)  ## 30
 
 .. note::
 
@@ -1984,7 +1984,7 @@ Modules and packages
 Python comes with a standard library of built-in modules. Here are a couple
 examples.
 
-Find out what version of Python you are running
+Find out what version of Python you are running:
 
 .. code:: python
 
@@ -2142,6 +2142,89 @@ Open a CSV file
 
 ----
 
+Error handling
+==========================================
+
+.. code:: python
+
+  try:
+    ## Either of these two lines could throw an IOError, say
+    ## if the file does not exist or the read() encounters a low level error.
+    with open(filename, 'rU') as f:
+        text = f.read()
+  except IOError:
+    ## Control jumps directly to here if any of the above lines throws IOError.
+    sys.stderr.write('problem reading:' + filename)
+  ## In any case, the code then continues with the line after the try/except
+
+----
+
+Logging
+==========================================
+
+.. list-table::
+
+   * - Display console output
+
+     - ``print()``
+
+   * - Confirmation that things are working as expected
+
+     - ``logging.info()`` (of ``logging.debug()``)
+
+   * - The software is still working as expected, but there might be a problem
+
+     - ``logging.warning()``
+
+   * - Report an error regarding a particular runtime event
+
+     - Raise an exception
+
+   * - Software has not been able to perform some function.
+
+     - ``logging.error()``, ``logging.exception()`` or ``logging.critical()`` as appropriate
+
+----
+
+Logging Example
+===============
+
+.. code:: python
+
+    >>> import logging
+    >>> logging.warning('Watch out!')
+    WARNING:root:Watch out!
+    >>> logging.info('I told you so')
+    >>>
+
+.. note::
+
+    Why didn't the last one print anything out?
+
+----
+
+Logging to a File
+=================
+
+.. code:: python
+
+    import logging
+    logging.basicConfig(filename='example.log',level=logging.DEBUG)
+    logging.debug('This message should go to the log file')
+    logging.info('So should this')
+    logging.warning('And this, too')
+
+.. note::
+
+    Level   When it’s used
+    DEBUG   Detailed information, typically of interest only when diagnosing problems.
+    INFO    Confirmation that things are working as expected.
+    WARNING     An indication that something unexpected happened, or indicative of some problem in the near future (e.g. ‘disk space low’). The software is still working as expected.
+    ERROR   Due to a more serious problem, the software has not been able to perform some function.
+    CRITICAL    A serious error, indicating that the program itself may be unable to continue running.
+
+----
+
 Style and Idioms
 ==========================================
 
@@ -2260,6 +2343,7 @@ Flat is better than nested
                                 if k2 == 'aws_region':
                                     aws_region = v3['value']
 
+
 ----
 
 .. code:: python
@@ -2270,6 +2354,109 @@ Flat is better than nested
     if isinstance(values, dict):
         aws_region = values.get('aws_region', {}).get('value', None)
 
+
+----
+
+Defensive Programming and Common Gotchas
+==========================================
+
+.. code:: python
+    
+    def append_to(element, to=[]):
+        to.append(element)
+        return to
+
+.. code:: python
+
+    my_list = append_to(12)
+    print(my_list)
+
+    my_other_list = append_to(42)
+    print(my_other_list)
+
+.. note::
+
+    Mutable Default Arguments
+
+    Python’s default arguments are evaluated once when the function is defined, not each time the function is called (like it is in say, Ruby).
+
+----
+
+What to do instead
+==================
+
+.. code:: python
+
+    def append_to(element, to=None):
+        if to is None:
+            to = []
+        to.append(element)
+        return to
+
+.. note::
+
+    Class defaults can suffer from the same thing. If the defaults are used when the method is called, different class instances end up sharing references to the same object.
+
+----
+
+Imports Only Work the First Time
+================================
+
+.. code:: python
+
+    >>> import mygreatmodule
+
+Sometime later after some changes to your code:
+
+.. code:: python
+
+    >>> import mygreatmodule
+
+But your changes aren't working...
+
+
+.. code:: python
+
+    >>> reload(mygreatmodule)
+
+or just restart your Python interpreter.
+
+.. note::
+
+    You can run a file by importing it at the interactive prompt, but this only works once per session; subsequent imports simply return the already-loaded module. To force Python to reload and rerun a file's code, call the reload(module) function instead. And while you're at it, be sure to use parentheses for reload, but not import.
+
+----
+
+Don't Expect Results From Functions That Change Objects
+=======================================================
+
+.. code:: python
+
+    mylist = mylist.append(X)
+
+.. note::
+
+    In-place change operations such as the list.append( ) and list.sort( ) methods modify an object, but do not return the object that was modified (they return None); call them without assigning the result. It's not uncommon for beginners to say something like:
+
+----
+
+Don't foget that Python puts nametags and doesn't make copies
+=============================================================
+
+.. code:: python
+
+    >>> L = [1, 2, 3]        # A shared list object
+    >>> M = ['X', L, 'Y']    # Embed a reference to L
+    >>> M
+    ['X', [1, 2, 3], 'Y']
+    
+    >>> L[1] = 0             # Changes M too
+    >>> M
+    ['X', [1, 0, 3], 'Y']
+
+.. note::
+
+    How do we get around this?  Make a top-level copy
 
 ----
 
@@ -2304,11 +2491,6 @@ Algorithms and code
 
 
 --  https://github.com/nryoung/algorithms/blob/master/algorithms/searching/binary_search.py
-
-----
-
-Building Command Line Programs
-==========================================
 
 ----
 
@@ -2365,36 +2547,15 @@ Enter Requests
     # 200
     # 'application/json'
 
+
+----
+
+Building Command Line Programs
+==========================================
+
 ----
 
 Testing your code
-==========================================
-
-----
-
-Error handling
-==========================================
-
-.. code:: python
-
-  try:
-    ## Either of these two lines could throw an IOError, say
-    ## if the file does not exist or the read() encounters a low level error.
-    with open(filename, 'rU') as f:
-        text = f.read()
-  except IOError:
-    ## Control jumps directly to here if any of the above lines throws IOError.
-    sys.stderr.write('problem reading:' + filename)
-  ## In any case, the code then continues with the line after the try/except
-
-----
-
-Logging
-==========================================
-
-----
-
-Defensive Programming and Common Gotchas
 ==========================================
 
 ----
