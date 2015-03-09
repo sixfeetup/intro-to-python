@@ -2550,13 +2550,25 @@ Enter Requests
 
 ----
 
-Building Command Line Programs
+Project Day!
 ==========================================
 
-----
+Let's build some real Python programs
++++++++++++++++++++++++++++++++++++++
 
-Testing your code
-==========================================
+* Using the `twitter`_ python package from PyPI_
+
+  * Build a script to retrieve the 10 trending topics in Indianapolis
+
+* Install the ``pyramid`` package and build
+
+  * The smallest `hello world`_ possible
+  * Use the `starter`_ scaffold, start up pyramid and look at the generated code
+
+.. _twitter: http://mike.verdone.ca/twitter/
+.. _PyPI: https://pypi.python.org/pypi/twitter
+.. _hello world: http://docs.pylonsproject.org/docs/pyramid/en/latest/narr/firstapp.html
+.. _starter: http://docs.pylonsproject.org/docs/pyramid/en/latest/narr/project.html
 
 ----
 
