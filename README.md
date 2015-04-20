@@ -1,34 +1,7 @@
 # Intro to Python
 
-Eleven Fifty 5-day Course Curriculum
+5-day Intro Course Curriculum using Python
 
-## DAY 1
-AM1     
-AM2   
-PM1   
-PM2   
+## License
 
-## DAY 2
-AM1   
-AM2   
-PM1   
-PM2   
-
-## DAY 3
-AM1   
-AM2   
-PM1   
-PM2   
-
-## DAY 4
-AM1   
-AM2   
-PM1   
-PM2   
-
-## DAY 5
-AM1   
-AM2   
-PM1   
-PM2 
-
+These materials are avaialble under an [Apache 2.0 License](./LICENSE)
