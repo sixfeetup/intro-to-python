@@ -27,8 +27,8 @@
 
 ----
 
-Intro to Programming using Python
-=================================
+Programming Fundamentals using Python
+=====================================
 
 ----
 
